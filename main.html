@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIC-TAC-TOE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+    <header>
+        <button onclick="Mode()" id="dlmode"><img src="images/moon.svg" id="dlmode-btn" width="35px" height="35px"></button><br>
+        <div style="display: flex; justify-content:space-evenly">
+        <img src="images/letter-x.svg" width="50px" style="transform:rotateX('45deg')">
+        <h1>TIC TAC TOE</h1>
+        <img src="images/letter-o.svg" width="50px" style="transform:rotateX('45deg')">
+        </div>
+        
+    </header>
+    <div id="game-board">
+        <div class="player-card">
+            <div></div>
+            <p class="name-card" id="player-x" style="color: red;">PLAYER-X</p>
+            <button class="rename" onclick="rename(`x`)"><img src="images/edit-lm.svg" class="rename-tag" width="25px"></button><br>
+            <p class="name-card" id="point-x">0</p>
+        </div>
+        <div style="text-align: center;">
+            <label id="title">3X3</label><br>
+            <label id="winner">_</label>
+            <div id="three">
+                <label id="dash">___________________________</label>
+                <div class="row">
+                    <button class="thbox" onclick="turn(thboxes[0], 3)"></button>
+                    <button class="thbox" onclick="turn(thboxes[1], 3)"></button>
+                    <button class="thbox" onclick="turn(thboxes[2], 3)"></button>
+                </div>
+                <div class="row">
+                    <button class="thbox" onclick="turn(thboxes[3], 3)"></button>
+                    <button class="thbox" onclick="turn(thboxes[4], 3)"></button>
+                    <button class="thbox" onclick="turn(thboxes[5], 3)"></button>
+                </div>
+                <div class="row">
+                    <button class="thbox" onclick="turn(thboxes[6], 3)"></button>
+                    <button class="thbox" onclick="turn(thboxes[7], 3)"></button>
+                    <button class="thbox" onclick="turn(thboxes[8], 3)"></button>
+                </div>
+                <div><button onclick="re_set(thboxes)" class="reset">RESET</button></div>
+            </div>
+            <div id="four">
+                <label id="dash">___________________________</label>
+                <div class="row">
+                    <button class="fbox" onclick="turn(fboxes[0], 4)"></button>
+                    <button class="fbox" onclick="turn(fboxes[1], 4)"></button>
+                    <button class="fbox" onclick="turn(fboxes[2], 4)"></button>
+                    <button class="fbox" onclick="turn(fboxes[3], 4)"></button>                    
+                </div>
+                <div class="row">
+                    <button class="fbox" onclick="turn(fboxes[4], 4)"></button>
+                    <button class="fbox" onclick="turn(fboxes[5], 4)"></button>
+                    <button class="fbox" onclick="turn(fboxes[6], 4)"></button>
+                    <button class="fbox" onclick="turn(fboxes[7], 4)"></button>
+                </div>
+                <div class="row">
+                    <button class="fbox" onclick="turn(fboxes[8], 4)"></button>
+                    <button class="fbox" onclick="turn(fboxes[9], 4)"></button>
+                    <button class="fbox" onclick="turn(fboxes[10], 4)"></button>
+                    <button class="fbox" onclick="turn(fboxes[11], 4)"></button>
+                </div>
+                <div class="row">
+                    <button class="fbox" onclick="turn(fboxes[12], 4)"></button>
+                    <button class="fbox" onclick="turn(fboxes[13], 4)"></button>
+                    <button class="fbox" onclick="turn(fboxes[14], 4)"></button>
+                    <button class="fbox" onclick="turn(fboxes[15], 4)"></button>
+                </div>
+                <div><button onclick="re_set(fboxes)" class="reset">RESET</button></div>
+            </div>
+            <div id="five">
+                <label id="dash">___________________________</label>
+                <div class="row">
+                    <button class="box5" onclick="turn(boxes5[0], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[1], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[2], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[3], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[4], 5)"></button>
+                </div>
+                <div class="row">
+                    <button class="box5" onclick="turn(boxes5[5], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[6], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[7], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[8], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[9], 5)"></button>
+                </div>
+                <div class="row">
+                    <button class="box5" onclick="turn(boxes5[10], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[11], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[12], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[13], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[14], 5)"></button>
+                </div>
+                <div class="row">
+                    <button class="box5" onclick="turn(boxes5[15], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[16], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[17], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[18], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[19], 5)"></button>
+                </div>
+                <div class="row">
+                    <button class="box5" onclick="turn(boxes5[20], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[21], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[22], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[23], 5)"></button>
+                    <button class="box5" onclick="turn(boxes5[24], 5)"></button>
+                </div>
+                <div><button onclick="re_set(boxes5)" class="reset">RESET</button></div>
+            </div>
+            <button onclick="resetscores()" class="reset">RESET SCORES</button>
+        </div>
+        <div class="player-card">
+            <p class="name-card" id="player-o">PLAYER-O</p>
+            <button class="rename" onclick="rename(`o`)"><img src="images/edit-lm.svg" class="rename-tag" width="25px"></button><br>
+            <p class="name-card" id="point-o">0</p>
+        </div>
+    </div>
+
+    <footer style="margin-top: 2%; text-align: center;">
+        <button id="game-changer1" onclick="change(`game-changer1`)">4X4</BUtton>
+        <button id="game-changer2" onclick="change(`game-changer2`)">5X5</BUtton>
+    </footer>
+    
+
+    <script src="game.js"></script>
+</body>
+</html>

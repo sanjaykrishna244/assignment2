@@ -1,0 +1,125 @@
+:root{
+    --p-color: antiquewhite;
+    --s-color: rgb(0 ,0 ,0);
+    --t-color: rgb(185, 255, 232);
+    --q-color: rgb(213, 255, 241);
+}
+.dark-mode{
+    --s-color: rgb(255 ,255 ,255);
+    --p-color: rgb(0 ,0 ,0);
+    --t-color: gray;
+    --q-color: rgb(180, 180, 180);
+}
+
+body {
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: var(--p-color);
+    color: var(--s-color);
+    font-size: 25px;
+}
+
+header h1{
+    text-align: center;
+    font-size: 5em;
+    font-family: Tiny5;
+    color: rgb(72, 255, 0);
+    margin-top: 0;
+    margin-bottom: 0px;
+    display: inline;
+}
+#dlmode{
+    margin-left: 90%;
+    background-color: var(--p-color);
+    border: 0px solid var(--p-color);
+    padding: 0;
+    width: 40px;
+    cursor: pointer;
+}
+#game-board{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.rename{
+    background-color: var(--t-color);
+    border: 0px solid var(--t-color);
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+
+}
+.player-card{
+    text-align: center;
+    background-color: var(--t-color);
+    padding: 0.5em 2.5em;
+    box-shadow: 0px 20px var(--q-color);
+    width:15%;
+    height: 200px;
+}
+.name-card{
+    font-family: Verdana;
+    font-size: large;
+    font-weight: bolder;
+    display: inline-block;
+}
+.thbox,
+.fbox,
+.box5{
+    font-family: Arial;
+    font-size: 2em;
+    cursor: pointer;
+    background-color: var(--t-color);
+    border: 2px var(--p-color);
+    border-radius: 10px;
+    color: var(--s-color);
+    margin: 0.125em;
+}
+.thbox{width: 100px; height: 100px;}
+.fbox{width: 75px; height: 75px;}
+.box5{width: 60px; height: 60px;}
+.thbox:disabled,
+.fbox:disabled{
+    cursor: pointer;
+    background-color: var(--t-color);
+    border: 2px var(--p-color);
+    color: var(--s-color);
+}
+.reset{
+    background-color: var(--p-color);
+    color: var(--s-color);
+    padding: 0.5em 2em;
+    border-radius: 10px;
+    font-family: verdana;
+    font-size: large;
+    margin-top: 5%;
+
+}
+.row{
+    display: flex;
+}
+#winner,#title{
+    font-family: Times New Roman;
+    
+}
+#dash{
+    margin-top: -8%;
+}
+#three,
+#four,
+#five{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+#four,#five{
+    display: none;
+}
+#game-changer1,#game-changer2{
+    padding: 0.5em 2.5em;
+    background-color: var(--p-color);
+    color: var(--s-color);
+    border-radius: 10px;
+    font-family: Verdana;
+}
