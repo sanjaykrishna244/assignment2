@@ -8,6 +8,7 @@ function Mode() {
             rename[i].src = `images/edit-dm.svg`;
         }
         icon.src = `images/sun.svg`;
+
     }
     else{
         for(let i=0; i<rename.length; i++){
